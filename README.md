@@ -32,6 +32,33 @@ Then, whenever you want to publish:
 
 The workflow installs dependencies, builds with that URL prefix, and deploys the `out` folder. It does not run on push.
 
+## Vercel
+
+Publishing to Vercel is a separate manual workflow, [`.github/workflows/deploy-vercel.yml`](.github/workflows/deploy-vercel.yml). The site is served from the domain root. Leave the Vercel project disconnected from Git so this workflow is the only deploy path.
+
+Once, on your machine:
+
+```bash
+npx vercel link
+```
+
+That writes `.vercel/project.json` (gitignored). Create a token at [vercel.com/account/tokens](https://vercel.com/account/tokens).
+
+Then, in the GitHub repository, open **Settings → Secrets and variables → Actions** and add:
+
+| Secret | Value |
+| --- | --- |
+| `VERCEL_TOKEN` | The token you created |
+| `VERCEL_ORG_ID` | `orgId` from `.vercel/project.json` |
+| `VERCEL_PROJECT_ID` | `projectId` from `.vercel/project.json` |
+
+Whenever you want to publish:
+
+1. Open **Actions → Deploy Vercel**.
+2. Choose **Run workflow**.
+
+The workflow builds on the GitHub runner and uploads that build to Vercel production. The deployment URL is in the job summary. It does not run on push.
+
 ## Where code lives
 
 | Layer | Path | Responsibility |
