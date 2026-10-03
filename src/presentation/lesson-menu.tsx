@@ -20,7 +20,7 @@ export function LessonMenu({
     <nav aria-label="Lessons" className="flex flex-col gap-6">
       {parts.map((part) => (
         <div key={part.id}>
-          <p className="font-mono text-[11px] tracking-[0.16em] text-muted-foreground uppercase">
+          <p className="font-sans text-[11px] font-medium tracking-[0.16em] text-muted-foreground uppercase">
             {part.title}
           </p>
           <ol className="mt-2 flex flex-col">

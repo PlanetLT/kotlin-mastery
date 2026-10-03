@@ -33,17 +33,17 @@ export function LessonScreen({
         <LessonMenu parts={parts} currentId={lesson.id} />
       </aside>
       <article className="min-w-0 px-4 py-10 sm:px-8 sm:py-12">
-        <p className="font-mono text-[11px] tracking-[0.16em] text-primary uppercase">
+        <p className="font-sans text-[11px] font-medium tracking-[0.16em] text-primary uppercase">
           Lesson {lesson.order} · {lesson.minutes} min
         </p>
-        <h1 className="mt-3 font-serif text-4xl leading-tight tracking-tight">{lesson.title}</h1>
+        <h1 className="mt-3 font-heading text-4xl leading-tight">{lesson.title}</h1>
         <p className="mt-4 max-w-2xl text-lg leading-8 text-foreground/80">{lesson.summary}</p>
         <nav aria-label="On this page" className="mt-6 flex flex-wrap gap-2">
           {lesson.sections.map((section) => (
             <a
               key={section.id}
               href={`#${section.id}`}
-              className="rounded-full border border-border px-3 py-1 font-mono text-[11px] tracking-wide uppercase hover:bg-muted"
+              className="rounded-full border border-border px-3 py-1 font-sans text-[11px] font-medium tracking-wide uppercase hover:bg-muted"
             >
               {section.heading}
             </a>
@@ -52,9 +52,9 @@ export function LessonScreen({
 
         {lesson.sections.map((section) => (
           <section key={section.id} id={section.id} className="mt-10 scroll-mt-20">
-            <h2 className="font-serif text-2xl">{section.heading}</h2>
+            <h2 className="font-heading text-2xl">{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
-              <p key={paragraph} className="mt-4 max-w-2xl text-base leading-7">
+              <p key={paragraph} className="mt-4 max-w-2xl text-base leading-8">
                 <RichText text={paragraph} />
               </p>
             ))}
@@ -77,7 +77,7 @@ export function LessonScreen({
                 )}
               >
                 <Badge variant={callout.level === "pro" ? "default" : "outline"}>{LEVEL_LABEL[callout.level]}</Badge>
-                <h3 className="mt-2 font-serif text-lg">{callout.title}</h3>
+                <h3 className="mt-2 font-heading text-lg">{callout.title}</h3>
                 <p className="mt-1 text-sm leading-6">
                   <RichText text={callout.body} />
                 </p>
@@ -87,8 +87,8 @@ export function LessonScreen({
         ))}
 
         <aside className="mt-10 max-w-2xl rounded-xl bg-foreground px-5 py-4 text-background">
-          <p className="font-mono text-[11px] tracking-[0.16em] uppercase text-background/70">You can do this now</p>
-          <p className="mt-2 leading-7">{lesson.checkpoint}</p>
+          <p className="font-sans text-[11px] font-medium tracking-[0.16em] uppercase text-background/70">You can do this now</p>
+          <p className="mt-2 leading-8">{lesson.checkpoint}</p>
         </aside>
 
         <Exercise exercise={lesson.exercise} />
@@ -96,7 +96,7 @@ export function LessonScreen({
         <MarkRead lessonId={lesson.id} />
 
         <section className="mt-12 border-t border-border pt-8">
-          <h2 className="font-serif text-2xl">Sources</h2>
+          <h2 className="font-heading text-2xl">Sources</h2>
           <ul className="mt-3 max-w-2xl space-y-2 text-sm leading-6">
             {lesson.sources.map((source) => (
               <li key={source.url}>
@@ -111,16 +111,16 @@ export function LessonScreen({
         <nav className="mt-10 grid gap-3 border-t border-border pt-6 sm:grid-cols-2">
           {previous ? (
             <Link href={lessonPath(previous.slug)} className="rounded-xl border border-border px-4 py-3 hover:bg-muted">
-              <span className="font-mono text-[11px] tracking-wide uppercase text-muted-foreground">Previous</span>
-              <span className="mt-1 block font-serif text-lg">{previous.title}</span>
+              <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-muted-foreground">Previous</span>
+              <span className="mt-1 block font-heading text-lg font-semibold tracking-[-0.015em]">{previous.title}</span>
             </Link>
           ) : (
             <span />
           )}
           {next ? (
             <Link href={lessonPath(next.slug)} className="rounded-xl border border-border px-4 py-3 hover:bg-muted sm:text-right">
-              <span className="font-mono text-[11px] tracking-wide uppercase text-muted-foreground">Next</span>
-              <span className="mt-1 block font-serif text-lg">{next.title}</span>
+              <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-muted-foreground">Next</span>
+              <span className="mt-1 block font-heading text-lg font-semibold tracking-[-0.015em]">{next.title}</span>
             </Link>
           ) : null}
         </nav>

@@ -53,14 +53,13 @@ export function CodeBlock({ source, caption }: { source: string; caption?: strin
   return (
     <figure className="my-6 overflow-hidden rounded-xl bg-foreground text-background">
       <div className="flex items-center justify-between gap-3 border-b border-background/15 px-4 py-2">
-        <figcaption className="font-mono text-[11px] tracking-wide text-background/70 uppercase">
+        <figcaption className="font-sans text-[11px] font-medium tracking-wide text-background/70 uppercase">
           {caption ?? "Kotlin"}
         </figcaption>
         <Button
           type="button"
           size="xs"
           variant="secondary"
-          className="font-mono"
           onClick={copy}
         >
           {copied ? "Copied" : "Copy"}

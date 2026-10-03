@@ -26,9 +26,9 @@ This site is a reading guide. The stack stays small: Next.js App Router, strict 
 ## Tailwind and tokens
 
 - Design tokens live only in `src/app/globals.css` (shadcn CSS variables plus the paper, ink, and accent roles).
-- Do not invent one-off hex colors in components. Use the token utilities (`bg-background`, `text-foreground`, `bg-primary`, `font-serif`, `font-mono`).
+- Do not invent one-off hex colors in components. Use the token utilities (`bg-background`, `text-foreground`, `bg-primary`, `font-sans`, `font-heading`, `font-mono`).
 - Combine classes with `cn()` from `@/shared/ui`. Do not add another classnames helper.
-- The reading layout is the product: a serif for titles and prose, a mono face for code and labels, one accent. Keep it paper and ink. No gradient heroes, no glass cards, no purple theme.
+- The reading layout is the product: Source Sans 3 for body, navigation, buttons, and labels; Source Serif 4 for headings; Source Code Pro for code. One accent. Keep it paper and ink. No gradient heroes, no glass cards, no purple theme.
 
 ## shadcn/ui
 

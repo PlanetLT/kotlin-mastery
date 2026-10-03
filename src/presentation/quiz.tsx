@@ -34,7 +34,7 @@ export function Quiz({ lessonId, questions }: { lessonId: string; questions: rea
 
   return (
     <section aria-labelledby="quiz-heading" className="mt-12 border-t border-border pt-8">
-      <h2 id="quiz-heading" className="font-serif text-2xl">
+      <h2 id="quiz-heading" className="font-heading text-2xl">
         Check yourself
       </h2>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
@@ -90,7 +90,7 @@ export function Quiz({ lessonId, questions }: { lessonId: string; questions: rea
           );
         })}
       </ol>
-      <Button type="button" className="mt-6 font-mono" onClick={check}>
+      <Button type="button" className="mt-6" onClick={check}>
         Check answers
       </Button>
       {submitted && grade.perfect ? (

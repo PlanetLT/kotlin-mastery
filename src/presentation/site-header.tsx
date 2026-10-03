@@ -17,13 +17,13 @@ export function SiteHeader({ parts }: { parts: readonly MenuPart[] }) {
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center gap-3 px-4">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger
-            render={<Button variant="outline" size="sm" className="font-mono lg:hidden" />}
+            render={<Button variant="outline" size="sm" className="lg:hidden" />}
           >
             Path
           </SheetTrigger>
           <SheetContent side="left" className="w-[min(100%,20rem)] overflow-y-auto bg-background">
             <SheetHeader>
-              <SheetTitle className="font-mono text-xs tracking-[0.16em] uppercase">
+              <SheetTitle className="font-sans text-xs font-medium tracking-[0.16em] uppercase">
                 The path
               </SheetTitle>
             </SheetHeader>
@@ -32,14 +32,14 @@ export function SiteHeader({ parts }: { parts: readonly MenuPart[] }) {
             </div>
           </SheetContent>
         </Sheet>
-        <Link href="/" className="font-mono text-xs tracking-[0.18em] uppercase">
+        <Link href="/" className="font-sans text-xs font-medium tracking-[0.18em] uppercase">
           Kotlin Field Guide
         </Link>
         <nav className="ml-auto flex items-center gap-1">
           <Link
             href="/"
             className={cn(
-              "rounded-md px-2.5 py-1.5 font-mono text-xs tracking-wide uppercase",
+              "rounded-md px-2.5 py-1.5 font-sans text-xs font-medium tracking-wide uppercase",
               pathname === "/" ? "bg-muted" : "hover:bg-muted",
             )}
           >
@@ -48,7 +48,7 @@ export function SiteHeader({ parts }: { parts: readonly MenuPart[] }) {
           <Link
             href="/sources"
             className={cn(
-              "rounded-md px-2.5 py-1.5 font-mono text-xs tracking-wide uppercase",
+              "rounded-md px-2.5 py-1.5 font-sans text-xs font-medium tracking-wide uppercase",
               onSources ? "bg-muted" : "hover:bg-muted",
             )}
           >

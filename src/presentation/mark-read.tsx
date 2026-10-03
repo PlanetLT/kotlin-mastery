@@ -12,7 +12,6 @@ export function MarkRead({ lessonId }: { lessonId: string }) {
       <Button
         type="button"
         variant={done ? "secondary" : "outline"}
-        className="font-mono"
         disabled={done}
         onClick={() => progress.markRead(lessonId)}
       >

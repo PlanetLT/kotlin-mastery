@@ -11,8 +11,8 @@ export default function SourcesPage() {
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:py-14">
-      <p className="font-mono text-[11px] tracking-[0.18em] text-primary uppercase">References</p>
-      <h1 className="mt-3 font-serif text-4xl tracking-tight">Sources</h1>
+      <p className="font-sans text-[11px] font-medium tracking-[0.18em] text-primary uppercase">References</p>
+      <h1 className="mt-3 font-heading text-4xl">Sources</h1>
       <p className="mt-4 text-lg leading-8 text-foreground/80">
         The lessons are original. These are the official pages they are checked against. If a sentence
         and a doc disagree, the doc wins.
@@ -20,7 +20,7 @@ export default function SourcesPage() {
       <div className="mt-10 flex flex-col gap-10">
         {groups.map((group) => (
           <section key={group.topic}>
-            <h2 className="font-serif text-2xl">{group.topic}</h2>
+            <h2 className="font-heading text-2xl">{group.topic}</h2>
             <ul className="mt-3 space-y-2">
               {group.links.map((link) => (
                 <li key={link.url}>
